@@ -3,7 +3,7 @@ import java.util.Scanner;
 // This class reads and writes image files
 public class ImageFileUtilities {
 	
-	// Takes String fileName as input and will read the image file with that name, throws IoException if present
+	// Takes String fileName as input and will read the image file with that name, throws IOException if present
 	public static Image read(String fileName) throws IOException {
 		Scanner in = new Scanner(new File(fileName));
 		String header = in.nextLine();
@@ -62,7 +62,7 @@ public class ImageFileUtilities {
 		bw.write(metaData + "\n");
 		bw.write(width + " " + height + "\n");
 		bw.write(maxRange + "\n");
-		
+		System.out.println(metaData);
 		// Writes Pixels with the desired rgb values 
 		for(int i = 0; i<height; i++) {
 			for(int j = 0; j<width; j++) {
